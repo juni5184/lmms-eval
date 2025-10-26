@@ -80,7 +80,8 @@ class Llava_OneVision(lmms):
         use_cache: Optional[bool] = True,
         truncate_context: Optional[bool] = False,  # whether to truncate the context in generation, set it False for LLaVA-1.6
         customized_config: Optional[str] = None,  # ends in json
-        max_frames_num: Optional[int] = 32,
+        # 여기?
+        max_frames_num: Optional[int] = 64,
         mm_spatial_pool_stride: Optional[int] = 2,
         mm_spatial_pool_mode: Optional[str] = "bilinear",
         token_strategy: Optional[str] = "single",  # could be "single" or "multiple", "multiple" denotes adding multiple <image> tokens for each frame
@@ -117,6 +118,7 @@ class Llava_OneVision(lmms):
         self.pretrained = pretrained
         self.token_strategy = token_strategy
         self.max_frames_num = max_frames_num
+        print(f"max_frames_num: {self.max_frames_num}")
         self.mm_spatial_pool_stride = mm_spatial_pool_stride
         self.mm_spatial_pool_mode = mm_spatial_pool_mode
         self.video_decode_backend = video_decode_backend
